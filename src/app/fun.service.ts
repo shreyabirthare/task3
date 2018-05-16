@@ -43,6 +43,20 @@ export class FunService  {
     });
     return sum;
   }
+  nettotal()
+  {
+    let sum=0;
+    // for (let i of employees){
+    //   console.log(i.amt);
+    //   sum=sum+i.amt;
+    //   return sum;
+    // }
+    this.emp2.forEach(element => {
+      
+      sum = sum + element.amt;
+    });
+    return sum;
+  }
 
   getregion(region){
     return this.emp2.filter(function (emp) { return emp.reg == region;})
