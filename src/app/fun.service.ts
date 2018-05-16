@@ -10,15 +10,23 @@ export class FunService  {
   emp2:emp[]=employees;
 
   add(a){
-    this.emp2[a].amt= this.emp2[a].amt+1;
-    this.gettotal('reg');
+    this.emp2.forEach(element => {
+      if (element.id == a) {
+        element.amt = element.amt + 1;
+      }
+    });
+    // this.gettotal('reg');
   }
   
   
   
   delete(a){
-    this.emp2[a].amt= this.emp2[a].amt-1;
-    this.gettotal('reg');
+    this.emp2.forEach(element => {
+      if (element.id == a) {
+        element.amt = element.amt - 1;
+      }
+    });
+    // this.gettotal('reg');
   }
 
   gettotal(region)
@@ -30,6 +38,7 @@ export class FunService  {
     //   return sum;
     // }
     this.getregion(region).forEach(element => {
+      
       sum = sum + element.amt;
     });
     return sum;
