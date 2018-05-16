@@ -1,0 +1,15 @@
+<div>
+  <li *ngFor="let demo of serv1.getregion('reg1'); ">
+    <span>{{demo.name}}<span><button type="button" (click)="serv1.delete(demo.id)">-</button> {{demo.amt}}</span></span>  
+
+    
+    <span><button type="button" (click)="serv1.add(demo.id)">+</button> </span> 
+    <br> 
+    <br>
+  </li>
+</div>
+<div>
+  TOTAL: {{serv1.gettotal('reg1')}};
+</div>
+
+<!-- html me this is not needed -->
